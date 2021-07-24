@@ -1,0 +1,18 @@
+
+=======Thankyou For Booking========
+
+	Name:- Amita
+	Address:- aababababa
+	Mobile No:- 1234567891
+	Age:- 11
+	Days:- 1
+	Food Type:- Lunch+Dinner
+	Food price:- 550
+	Room Type:- minisuite
+	Room No:- 36
+	Total:- 4450
+	Checkin Date:- 19/05/2021
+	Checkin Time:- 13:12:22
+	Checkout Date:- 20/05/2021
+
+=======Have A Nice Day=======
