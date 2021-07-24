@@ -1,0 +1,203 @@
+#***********Tkinter*****************
+
+
+
+# to install tkinter in python use
+# $sudo apt-get install python-tk
+# python2 uses Tkinter module and python3 uses tkinter module
+
+_____________________________________
+import tkinter
+top = tkinter.Tk()
+# Code to add widgets will go here...
+top.mainloop()
+
+____________________________________
+#adding label
+
+import tkinter
+root = Tk()
+var = StringVar()
+label = Label( root, textvariable=var)
+var.set("Welcome to APSIT")
+label.pack()
+root.mainloop()
+
+'''There is a method known by the name mainloop() is used when 
+your application is ready to run. mainloop() is an infinite
+ loop used to run the application,
+ wait for an event to occur and process the event 
+as long as the window is not closed.'''
+
+
+_______________________________________
+#adding a textbox
+
+from tkinter import *
+
+top = Tk()
+L1 = Label(top, text="User Name")
+L1.pack(side = LEFT)
+E1 = Entry(top, bd =5)
+E1.pack(side = RIGHT)
+
+top.mainloop()
+
+_______________________________________
+#adding a message on the window
+from tkinter import *
+
+root = Tk()
+var = StringVar()
+label = Message( root, textvariable=var)
+
+var.set("Hey!? How are you doing?")
+label.pack()
+root.mainloop()
+
+______________________________________
+#adding a button and a message box
+import tkinter
+from tkinter import messagebox
+
+top = tkinter.Tk()
+
+def helloCallBack():
+   messagebox.showinfo( "Hello Python", "Hello APSIT")
+
+B = tkinter.Button(top, text ="Hello", command = helloCallBack)
+
+B.pack()
+top.mainloop()
+
+# pack() is geometry manager organizes widgets in blocks before placing them in the parent widget.
+
+______________________________________
+
+#Message Box 
+
+from tkinter import *
+from tkinter import messagebox 
+
+root = Tk() 
+root.geometry("300x200") 
+
+w = Label(root, text ='APSIT Skills', font = "50") 
+w.pack() 
+
+messagebox.showinfo("showinfo", "Information") 
+
+messagebox.showwarning("showwarning", "Warning") 
+
+messagebox.showerror("showerror", "Error") 
+
+messagebox.askquestion("askquestion", "Are you sure?") 
+
+messagebox.askokcancel("askokcancel", "Want to continue?") 
+
+messagebox.askyesno("askyesno", "Find the value?") 
+
+____________________________________________________
+
+# checkbox
+
+from tkinter import *
+top = Tk()
+CheckVar1 = IntVar()
+CheckVar2 = IntVar()
+C1 = Checkbutton(top, text = "Music", variable = CheckVar1, \
+                 onvalue = 1, offvalue = 0, height=5, \
+                 width = 20)
+C2 = Checkbutton(top, text = "Video", variable = CheckVar2, \
+                 onvalue = 1, offvalue = 0, height=5, \
+                 width = 20)
+C1.pack()
+C2.pack()
+top.mainloop()
+
+____________________________________________________
+#feet to meter 
+
+from tkinter import *
+def calculate(*args):
+    try:
+        value = float(feet.get())
+        meters.set((0.3048 * value * 10000.0 + 0.5)/10000.0)
+    except ValueError:
+        pass
+    
+root = Tk()
+root.title("APSIT-Feet to Meters")
+
+mainframe = Frame(root)
+mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
+
+
+feet = StringVar()
+meters = StringVar()
+
+feet_entry = Entry(mainframe, width=7, textvariable=feet)
+feet_entry.grid(column=2, row=1, sticky=(W, E))
+
+Label(mainframe, textvariable=meters).grid(column=2, row=2, sticky=(W, E))
+Button(mainframe, text="Calculate", command=calculate).grid(column=3, row=3, sticky=W)
+
+Label(mainframe, text="feet").grid(column=3, row=1, sticky=W)
+Label(mainframe, text="is equivalent to").grid(column=1, row=2, sticky=E)
+Label(mainframe, text="meters").grid(column=3, row=2, sticky=W)
+root.mainloop()
+
+____________________________________________________
+#canvas
+from tkinter import *
+root=Tk()
+
+root.title("My First Tkinter Application") #Giving a title to bar
+c=Canvas(root,bg="orange",height=1000, width=1000) #Creating a canvas
+
+
+#Drawing a Line
+#line = canvas.create_line(x0, y0, x1, y1, ..., xn, yn, options
+#Drawing a Line
+id=c.create_line(80,80,200,80,200,200,width=6,fill="cyan3")
+
+#Drawing a Oval
+#Creates a circle or an ellipse at the given coordinates.
+#It takes two pairs of coordinates; the top left and bottom right
+#corners of the bounding rectangle for the oval.
+#oval = canvas.create_oval(x0, y0, x1, y1, options)
+
+id=c.create_oval(120,120,400,300,width=6,fill="red",outline="cornsilk1",activefill="green")#
+
+#fnt=('Times',22,'bold italic underline') #Setting Font
+#id=c.create_text(250,40,text="My first Tkinter Application on canvas",font=fnt,fill="red",activefill="green") #Drawing a Text
+#id=c.create_polygon(320,320,320,420,420,320,width=6,fill="yellow",outline="cornsilk2",activefill="lightblue")#Drawing Polygon
+
+
+#Drawing Rectangle
+id=c.create_rectangle(460,560,650,650,width=6,fill="brown",outline="cornsilk3",activefill="chocolate")
+#460,560 - left top corner
+#650,650 - bottom right corner
+
+#Drawing arc
+id=c.create_arc(500,100,600,300,width=6,start=0,extent=180,outline="white")
+id=c.create_arc(500,300,700,700,width=6,start=0,extent=180,outline="white",style="arc")#Drawing arc
+
+file1=PhotoImage(file="cat.gif",height=300,width=300)
+file2=PhotoImage(file="dog.gif",height=300,width=300)
+
+#Drawing Image
+id=c.create_image(300,400,anchor=NE,image=file2,activeimage=file1)
+#open and show anchor image
+c.pack()
+root.mainloop()
+
+
+
+
+
+
+
+
+
+
